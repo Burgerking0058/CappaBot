@@ -119,7 +119,8 @@ async def on_message(message):
 				await message.channel.send(f"I will react to <@{personToReact}>")
 
 			elif command == "voice":
-				await channel
+				await channel.connect()
+				print("tried")
 
 			# Copy command
 			elif message.content.lower()[:4] == "copy":
