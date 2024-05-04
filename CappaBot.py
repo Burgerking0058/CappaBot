@@ -5,7 +5,7 @@ import os
 import sys
 import random
 from dotenv import load_dotenv
-
+# Casper changes here
 # CappaBot.py
 print("CappaBot has started loading...")
 
@@ -15,8 +15,13 @@ TOKEN = os.getenv("DISCORD_TOKEN")
 CAPPABOT = int(os.getenv("DISCORD_CAPPABOT_ID"))
 
 # Constant variables
+<<<<<<< HEAD
 DEBUG = False
 REACTION_IMAGE_PATH = "../reaction images/"
+=======
+DEBUG = True
+REACTION_IMAGE_PATH = "../reactionImages/"
+>>>>>>> 4249711ba17ba706e582cbeec0a052ec7eb15b1a
 REACTION_IMAGE_NAMES = os.listdir(REACTION_IMAGE_PATH)
 SERVER = 948070330486882355
 
@@ -43,6 +48,8 @@ async def first_command(interaction):
 @client.event
 async def on_ready():
 	print(f'{client.user} has connected to Discord!')
+
+	await tree.sync(guild=discord.Object(id=SERVER))
 
 	if DEBUG:
 		user = client.get_user(CAPPABOT)
