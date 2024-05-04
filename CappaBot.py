@@ -16,7 +16,7 @@ CAPPABOT = int(os.getenv("DISCORD_CAPPABOT_ID"))
 
 # Constant variables
 DEBUG = False
-REACTION_IMAGE_PATH = "../reactionImages/"
+REACTION_IMAGE_PATH = "../reaction images/"
 REACTION_IMAGE_NAMES = os.listdir(REACTION_IMAGE_PATH)
 SERVER = 948070330486882355
 
@@ -110,6 +110,9 @@ async def on_message(message):
 				personToReact = int(message.content[8:-1])
 				print(f"I will react to: {personToReact}")
 				await message.channel.send(f"I will react to <@{personToReact}>")
+
+			elif command == "voice":
+				await channel
 
 			# Copy command
 			elif message.content.lower()[:4] == "copy":
